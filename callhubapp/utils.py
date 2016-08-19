@@ -2,6 +2,7 @@
 '''
 Matrix based fibonacci finding function
 '''
+from memoize import memoize, delete_memoized, delete_memoized_verhash
 
 fib_matrix = [[1,1],
               [1,0]]
@@ -15,7 +16,7 @@ def mat_mult(A,B, mod):
     return [[(A[0][0]*B[0][0] + A[0][1]*B[1][0])%mod, (A[0][0]*B[0][1] + A[0][1]*B[1][1])%mod],
             [(A[1][0]*B[0][0] + A[1][1]*B[1][0])%mod, (A[1][0]*B[0][1] + A[1][1]*B[1][1])%mod]]
 
-
+@memoize(50000)
 def matrix_pow(M, power, mod):
     #Special definition for power=0:
     if power <= 0:
@@ -35,7 +36,7 @@ def matrix_pow(M, power, mod):
     return result
   
   
-
+@memoize(50000)
 def pow(x, n, I, mult):
     """
     Returns x to the power of n. Assumes I to be identity relative to the
