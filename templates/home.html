@@ -1,0 +1,18 @@
+
+{% block content %}
+<form action="/" method="POST">{% csrf_token %}
+{{form}}
+<input type="submit"/>
+</form>
+<br>
+{% if out %}
+    The n th fibonacci is {{ out }}.
+    <br>
+    <small>For numbers greater than 10^6, I am using mod 1000000007</small>
+{% endif %}
+{% endblock %}
+<br>
+<br>
+<br>
+
+{% include 'base.html' %}
