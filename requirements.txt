@@ -3,4 +3,4 @@ argparse==1.2.1
 django-redis-cache==1.6.5
 redis==2.10.5
 wsgiref==0.1.2
-pip freeze
+freeze
