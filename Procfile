@@ -1,3 +1,1 @@
-
-
-web: gunicorn hellodjango.wsgi
+web: gunicorn CallHub_project.wsgi
